@@ -4,7 +4,7 @@
 	<div class="card" style="margin: 25px auto; width:50%;">
 		<div class="card-body" >
 		<div class="row" style="margin: 20px auto;">
-			
+
 				<div class="col-sm">
       				<p><strong>
 						Coupon name:
@@ -15,7 +15,7 @@
     			</div>
 		</div>
 		<div class="row" style="margin: 20px auto;">
-			
+
 				<div class="col-sm">
       				<p><strong>
 						expiration date:
@@ -26,7 +26,7 @@
     			</div>
 		</div>
 		<div class="row" style="margin: 20px auto;">
-			
+
 				<div class="col-sm">
       				<p><strong>
 						description:
@@ -37,7 +37,7 @@
     			</div>
 		</div>
 		<div class="row" style="margin: 20px auto;">
-			
+
 				<div class="col-sm">
       				<p><strong>
 						Coupon creator:
@@ -46,24 +46,32 @@
 				<div class="col-sm">
       				<%= coupon.creator.username %>
     			</div>
-		</div>			
-	</div>		
-		
-		
+    </div>
+   	<div class="row" style="margin: 20px auto;">
+		  	<div class="col-sm">
+					 		<p><strong>
+									Costed:
+							</strong></p>
+					</div>
+				<div class="col-sm">
+					    <%= coupon.cost %>
+				</div>
+		</div>
+	</div>
+
+
 	</div>
 	<div style="margin: 25px auto; width:50%;">
-		<form style="display:inline;" action="/coupons/<%=coupon._id%>/use" method="POST">			
+		<form style="display:inline;" action="/coupons/<%=coupon._id%>/use" method="POST">
 			<button class="btn btn-primary btn-large">Use</button>
 		 </form>
-		
+
 
 		<% if(currentUser && coupon.creator.id.equals(currentUser._id)){%>
 		<a class="btn btn-primary btn-large" href="/coupons/<%=coupon._id%>/edit">Edit</a>
-	    <form style="display:inline;" action="/coupons/<%=coupon._id%>?_method=DELETE" method="POST">			
+	    <form style="display:inline;" action="/coupons/<%=coupon._id%>?_method=DELETE" method="POST">
 			<button class="btn btn-primary btn-large" >delete</button>
 		 </form>
 		<% } %>
 	</div>
 </div>
-
-

@@ -1,0 +1,109 @@
+<%- include ('./partials/header') %>
+
+<div class= "container">
+	<div class="card" style="margin: 25px auto; width:50%;">
+		<div class="card-body" >
+		<div class="row" style="margin: 20px auto;">
+
+				<div class="col-sm">
+      				<p><strong>
+						Coupon name:
+					</strong></p>
+    			</div>
+				<div class="col-sm">
+      				<%=coupon.couponName%>
+    			</div>
+		</div>
+		<div class="row" style="margin: 20px auto;">
+
+				<div class="col-sm">
+      				<p><strong>
+						expiration date:
+					</strong></p>
+    			</div>
+				<div class="col-sm">
+      				<%=coupon.validUntil.toDateString()%>
+    			</div>
+		</div>
+		<div class="row" style="margin: 20px auto;">
+
+				<div class="col-sm">
+      				<p><strong>
+						description:
+					</strong></p>
+    			</div>
+				<div class="col-sm">
+      				<%= coupon.description %>
+    			</div>
+		</div>
+		<div class="row" style="margin: 20px auto;">
+
+				<div class="col-sm">
+      				<p><strong>
+						Coupon creator:
+					</strong></p>
+    			</div>
+				<div class="col-sm">
+      				<%= coupon.creator.username %>
+    			</div>
+		</div>
+    <div class="row" style="margin: 20px auto;">
+
+				<div class="col-sm">
+      				<p><strong>
+						created date:
+					</strong></p>
+    			</div>
+				<div class="col-sm">
+      				<%= coupon.createdDate.toDateString() %>
+    			</div>
+		</div>
+    <div class="row" style="margin: 20px auto;">
+
+				<div class="col-sm">
+      				<p><strong>
+						couppon used by:
+					</strong></p>
+    			</div>
+				<div class="col-sm">
+      				<%= coupon.usedBy.username %>
+    			</div>
+		</div>
+    <div class="row" style="margin: 20px auto;">
+
+				<div class="col-sm">
+      				<p><strong>
+						last changed date:
+					</strong></p>
+    			</div>
+				<div class="col-sm">
+      				<%= coupon.lastChangedDate.toDateString() %>
+    			</div>
+		</div>
+		<div class="row" style="margin: 20px auto;">
+
+				<div class="col-sm">
+      				<p><strong>
+						costed:
+					</strong></p>
+    			</div>
+				<div class="col-sm">
+      				<%= coupon.cost %>
+    			</div>
+		</div>
+	</div>
+
+
+	</div>
+	<div style="margin: 25px auto; width:50%;">
+		<% if(currentUser && currentUser._id.equals(coupon.creator.id)){%>
+		<a class="btn btn-primary btn-large" href="/graveyard/<%=coupon._id%>/edit">Edit</a>
+	    <form style="display:inline;" action="/graveyard/<%=coupon._id%>?_method=DELETE" method="POST">
+			<button class="btn btn-primary btn-large" >Delete</button>
+		 </form>
+     <form style="display:inline;" action="/graveyard/<%=coupon._id%>/dontUse" method="POST">
+       <button class="btn btn-primary btn-large">Make available again</button>
+      </form>
+		<% } %>
+	</div>
+</div>

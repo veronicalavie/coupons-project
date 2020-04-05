@@ -1,13 +1,13 @@
 <html>
 	<head>
-		
+
 	<title>Coupons site</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
 	<style>
 		.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
   			 background-color: #E0FFFF;
-        } 
+        }
 		ul {
 		  list-style-type: none;
 		  margin: 0;
@@ -32,19 +32,15 @@
 		  background-color: white;
 		  color: black;
 		}
-		
+
 		</style>
 	</head>
-		
-	<body>		
+
+	<body>
 		<ul>
 			  <li><a id="header" class="active" href="/coupons">All Coupons</a></li>
-		
-			
-			  <!-- <li style="float:right"><a href="/login">Login</a></li>
-			  <li style="float:right"><a href="/register">Sign Up</a></li> -->
-	
-			  <li style="float:right"><a href="/profil">Signed In As <%=currentUser.username%></a></li>
+				<li><a id="header" class="active" href="/profil">My used coupons</a></li>
+		    <li><a id="header" class="active" href="/graveyard">Graveyard</a></li>
+			  <li style="float:right"><a href="/#">Hi <%=currentUser.username%></a></li>
 			  <li style="float:right"><a href="/logout">Logout</a></li>
 		</ul>
-	

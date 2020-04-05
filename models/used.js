@@ -13,7 +13,8 @@ var UsedSchema = new mongoose.Schema({
 				username: String
 			},
 	createdDate: Date,
-	lastChangedDate:{type: Date, default: Date.now}
+	lastChangedDate:{type: Date, default: Date.now},
+	cost: String
 });
 
 UsedSchema.plugin(passportLocalMongoose);
