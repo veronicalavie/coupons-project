@@ -3,48 +3,45 @@
 <div class="container">
 	<div style="margin: 25px auto;" class="col-lg-12">
 		<h3>
-			All Coupon that you used are here:
+			All used coupons are here:
 		</h3>
 	</div>
 	<table  id="myTable" style= "margin: 30px auto;" class="table table-striped" >
 		  <thead>
 
 			<tr>
-
 			  <th  scope="col" onclick="sortTable(0)">Coupon name</th>
-			  <th  scope="col" onclick="sortTable(1)">expiration date</th>
+			  <th scope="col" onclick="sortTable(1)">expiration date</th>
 			  <th  scope="col">description</th>
-			  <th  scope="col"onclick="sortTable(2)">creator</th>
-			  <th  scope="col"onclick="sortTable(3)">created date</th>
-			  <th  scope="col"onclick="sortTable(4)">used by</th>
-			  <th  scope="col"onclick="sortTable(5)">last changed date</th>
-				<th  scope="col"onclick="sortTable(6)">costed</th>
+        <th  scope="col"onclick="sortTable(2)">creator</th>
+			  <th  scope="col"onclick="sortTable(2)">created date</th>
+        <th  scope="col"onclick="sortTable(3)">coupon used by</th>
+        <th  scope="col"onclick="sortTable(4)">last changed date</th>
+				<th  scope="col"onclick="sortTable(5)">costed</th>
 			  </tr>
 
 		  </thead>
 		  <tbody>
 
-			<% usedCoupons.forEach(function(usedCoupon){%>
+			<% coupons.forEach(function(coupon){%>
 
-			  <% if(currentUser._id.equals(usedCoupon.usedBy.id)){ %>
 			<tr >
-
-			  <th ><a style="color:black;" href = "/graveyard/<%-usedCoupon._id%>"><%=usedCoupon.couponName %> </a></th>
-			  <td><%=usedCoupon.validUntil.toDateString() %></td>
-			  <td><%=usedCoupon.description %></td>
-			  <td><%=usedCoupon.creator.username %></td>
-			  <td><%=usedCoupon.createdDate.toDateString() %></td>
-			  <td><%=usedCoupon.usedBy.username %></td>
-			  <td><%=usedCoupon.lastChangedDate.toDateString() %></td>
-				<td><%=usedCoupon.cost %></td>
-
+			  <th ><a style="color:black;" href = "/graveyard/<%-coupon._id%>"> <%=coupon.couponName %> </a></th>
+			  <td><%=coupon.validUntil.toDateString() %></td>
+			  <td><%=coupon.description %></td>
+			  <td><%=coupon.creator.username %></td>
+        <td><%=coupon.createdDate.toDateString() %></td>
+				<td><%=coupon.usedBy.username %></td>
+        <td><%=coupon.lastChangedDate.toDateString() %></td>
+				<td><%=coupon.cost %></td>
 			</tr>
-				 <% } %>
+
 			<%})%>
 
 		  </tbody>
 	</table>
 </div>
+
 <script>
 function sortTable(n) {
   var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
@@ -101,5 +98,4 @@ function sortTable(n) {
   }
 }
 </script>
-
 <%- include ('./partials/footer') %>

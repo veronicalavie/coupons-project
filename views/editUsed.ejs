@@ -5,7 +5,7 @@
 		Edit <%=coupon.couponName%>
 	</h1>
 	<div style= "width:30%; margin:25px auto;">
-	<form action= "/coupons/<%=coupon._id%>?_method=PUT" method="POST">
+	<form action= "/graveyard/<%=coupon._id%>?_method=PUT" method="POST">
 	  <div class="form-group">
 		<label for="exampleInputEmail1">Title</label>
 		<input type="text" class="form-control" name="coupon[couponName]" value="<%= coupon.couponName%>">
@@ -21,7 +21,7 @@
 			<div class="form-group">
 				<label for="exampleInputEmail1">costed</label>
 				<input type="text" class="form-control" name="coupon[cost]" value="<%= coupon.cost%>">
-			 </div>
+			  </div>
 	  <button type="submit" class="btn btn-primary">Submit</button>
 	</form>
 	</div>

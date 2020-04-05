@@ -8,35 +8,37 @@
 	</div>
 	<table  id="myTable" style= "margin: 30px auto;" class="table table-striped" >
 		  <thead>
-			 
+
 			<tr>
-				
+
 			  <th  scope="col" onclick="sortTable(0)">Coupon name</th>
 			  <th scope="col" onclick="sortTable(1)">expiration date</th>
 			  <th  scope="col">description</th>
 			  <th  scope="col"onclick="sortTable(2)">creator</th>
+				<th  scope="col"onclick="sortTable(3)">costed</th>
 			  </tr>
-			
+
 		  </thead>
 		  <tbody>
-			  
-			<% coupons.forEach(function(coupon){%> 
-			  
+
+			<% coupons.forEach(function(coupon){%>
+
 			<tr >
-				
+
 			  <th ><a style="color:black;" href = "/coupons/<%-coupon._id%>"><%=coupon.couponName %> </a></th>
 			  <td><%=coupon.validUntil.toDateString() %></td>
 			  <td><%=coupon.description %></td>
 			  <td><%=coupon.creator.username %></td>
-				
+				<td><%=coupon.cost %></td>
+
 			</tr>
-				 
+
 			<%})%>
-			  
+
 		  </tbody>
 	</table>
-	
-	
+
+
 	<div>
 		<a class="btn btn-primary btn-large" href="/coupons/news">Add New Coupon</a>
 	</div>
@@ -47,7 +49,7 @@ function sortTable(n) {
   table = document.getElementById("myTable");
   switching = true;
   //Set the sorting direction to ascending:
-  dir = "asc"; 
+  dir = "asc";
   /*Make a loop that will continue until
   no switching has been done:*/
   while (switching) {
@@ -85,7 +87,7 @@ function sortTable(n) {
       rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
       switching = true;
       //Each time a switch is done, increase this count by 1:
-      switchcount ++;      
+      switchcount ++;
     } else {
       /*If no switching has been done AND the direction is "asc",
       set the direction to "desc" and run the while loop again.*/
