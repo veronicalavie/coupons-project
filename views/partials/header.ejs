@@ -1,9 +1,17 @@
 <html>
 	<head>
 
-	<title>Coupons site</title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+
+
+		    <meta charset="utf-8">
+		    <meta name="viewport" content="width=device-width, initial-scale=1">
+		    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+		    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+		    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+				<title>Coupons site</title>
+				<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+			    <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
 	<style>
 		.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
   			 background-color: #E0FFFF;
@@ -32,7 +40,10 @@
 		  background-color: white;
 		  color: black;
 		}
-
+	 li a:active{
+			background-color: white;
+			color: black;
+		}
 		</style>
 	</head>
 
@@ -41,6 +52,5 @@
 			  <li><a id="header" class="active" href="/coupons">All Coupons</a></li>
 				<li><a id="header" class="active" href="/profil">My used coupons</a></li>
 		    <li><a id="header" class="active" href="/graveyard">Graveyard</a></li>
-			  <li style="float:right"><a href="/#">Hi <%=currentUser.username%></a></li>
-			  <li style="float:right"><a href="/logout">Logout</a></li>
+				<li style="float:right"><a href="/logout">Logout</a></li>
 		</ul>

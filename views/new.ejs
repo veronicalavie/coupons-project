@@ -11,7 +11,12 @@
 					<input class= "form-control" type="text" name="coupon[couponName]" placeholder="name">
 				</div>
 				<div class= "form-group">
-					<input class= "form-control" type="text" name="coupon[validUntil]" placeholder="expiration date">
+					<input id="datepicker"  name="coupon[validUntil]" placeholder="expiration date"> 
+					    <script>
+					        $('#datepicker').datepicker({
+					            uiLibrary: 'bootstrap4'
+					        });
+					    </script>
 				</div>
 				<div class= "form-group">
 					<textarea class="form-control"  name="coupon[description]" rows="3"></textarea>
@@ -25,5 +30,7 @@
 			</form>
 		</div>
 </div>
+
+
 
 <%- include ('./partials/footer') %>

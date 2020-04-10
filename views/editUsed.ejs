@@ -12,7 +12,12 @@
 	  </div>
 	<div class="form-group">
 		<label for="exampleInputEmail1">expiration date</label>
-		<input type="text" class="form-control" name="coupon[validUntil]" value="<%= coupon.validUntil.toDateString()%>">
+		<input id="datepicker"  name="coupon[validUntil]" value="<%= coupon.validUntil.toDateString()%>">
+				<script>
+						$('#datepicker').datepicker({
+								uiLibrary: 'bootstrap4'
+						});
+				</script>
 	  </div>
 		<div class="form-group">
     		<label for="exampleFormControlTextarea1">Description</label>

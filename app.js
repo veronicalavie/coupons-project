@@ -44,7 +44,6 @@ app.use(authRoutes);
 app.use(couponsRoutes);
 app.use(graveyardRoutes);
 
-
-app.listen(3000, function(){
+app.listen(80, '0.0.0.0', function(){
 	console.log("START!");
 });
